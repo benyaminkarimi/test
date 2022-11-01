@@ -24,18 +24,12 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
-<<<<<<< HEAD
-=======
     'django_celery_beat',
->>>>>>> feature/product
     'drf_yasg',
 ]
 PROJECT_APPS = [
     'account',
-<<<<<<< HEAD
-=======
     'products',
->>>>>>> feature/product
 ]
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -186,9 +180,6 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
-<<<<<<< HEAD
-
-=======
 # Email Config
 
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
@@ -210,7 +201,6 @@ CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_TIMEZONE = 'Asia/Tehran'
 # We're going to have our tasks rolling soon, so that will be handy
 CELERY_BEAT_SCHEDULE = {}
->>>>>>> feature/product
 
 LOGGING = {
     "version": 1,

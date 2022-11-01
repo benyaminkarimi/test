@@ -26,6 +26,7 @@ class productViewSet( mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
     queryset = ProductModel.objects.all()
     serializer_class = productSerializer
     permission_classes = (customPermission,)
+
     def get_queryset(self):
         queryset = ProductModel.objects.all()
 
@@ -36,7 +37,7 @@ class productViewSet( mixins.CreateModelMixin, viewsets.ReadOnlyModelViewSet):
                 print(queryset)
             except:
                 if item =="ordering":
-                    queryset=queryset.order_by(item)
+                    queryset=queryset.order_by(self.request.GET[item])
         return queryset
 
     def get_pagination_class(self):

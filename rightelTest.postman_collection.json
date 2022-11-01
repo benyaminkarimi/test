@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "afa026cd-b7cf-4df9-9822-fcea2ecdefe8",
+		"name": "rightelTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"benyamin1@gmail.com\",\n    \"password\": \"benyamin1\",\n    \"username\": \"benyamin1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/account/register/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"account",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"benyamin\",\n    \"password\": \"benyamin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2NzE5NjUxNCwiaWF0IjoxNjY3MTEwMTE0LCJqdGkiOiJiYzdlMmNjODA3YmI0MzFkOWUwMTdmZGQ3OWI0YTViOCIsInVzZXJfaWQiOjJ9.Qm4iTrWi1S3sZX7Y3sfysi7Muf4HCN-uaVSAHhezWIU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/products/?name__contains=aa&price__gte=23000&stock=10&ordering=-price",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name__contains",
+							"value": "aa"
+						},
+						{
+							"key": "price__gte",
+							"value": "23000"
+						},
+						{
+							"key": "stock",
+							"value": "10"
+						},
+						{
+							"key": "ordering",
+							"value": "-price"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "multiple search and ordering",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/?name__contains=aa&price__gte=23000&stock=10&ordering=-price",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "name__contains",
+									"value": "aa"
+								},
+								{
+									"key": "price__gte",
+									"value": "23000"
+								},
+								{
+									"key": "stock",
+									"value": "10"
+								},
+								{
+									"key": "ordering",
+									"value": "-price"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 01 Nov 2022 05:55:09 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "662"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 15,\n            \"name\": \"aaaaa\",\n            \"description\": \"chize khubie\",\n            \"price\": 230050,\n            \"stock\": 10,\n            \"createAt\": \"2022-10-30T18:11:31.145017Z\",\n            \"category\": [\n                {\n                    \"id\": 7,\n                    \"name\": \"mobile\",\n                    \"parent_category\": null\n                }\n            ]\n        },\n        {\n            \"id\": 11,\n            \"name\": \"yakhchaaaal\",\n            \"description\": \"chize khubie\",\n            \"price\": 23000,\n            \"stock\": 10,\n            \"createAt\": \"2022-10-30T17:43:28.243791Z\",\n            \"category\": [\n                {\n                    \"id\": 5,\n                    \"name\": \"lavazem khanegi\",\n                    \"parent_category\": 1\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"lavazem khanegi1\",\n                    \"parent_category\": 3\n                }\n            ]\n        },\n        {\n            \"id\": 45,\n            \"name\": \"aaaaa\",\n            \"description\": \"chize khubie\",\n            \"price\": 23000,\n            \"stock\": 10,\n            \"createAt\": \"2022-10-31T14:35:31.395742Z\",\n            \"category\": [\n                {\n                    \"id\": 7,\n                    \"name\": \"mobile\",\n                    \"parent_category\": null\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "add products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"aaaaa\",\n    \"description\": \"chize khubie\",\n    \"price\": 23000,\n    \"stock\": 10,\n    \"category\": [\n        {\n            \"name\":\"mobile\"\n        }\n\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/products/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete no sales product with id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/noSaleProduct/7/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"noSaleProduct",
+						"7",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
