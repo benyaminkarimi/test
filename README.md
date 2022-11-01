@@ -1,4 +1,4 @@
-# GoCardless sample application
+# django sample application
 
 ## Setup
 
