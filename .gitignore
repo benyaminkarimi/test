@@ -9,6 +9,10 @@
 Icon
 
 .env
+<<<<<<< HEAD
+=======
+.venv/
+>>>>>>> feature/product
 # Thumbnails
 ._*
 
@@ -86,4 +90,8 @@ __pycache__/
 local_settings.py
 
 .env/
+<<<<<<< HEAD
 db.sqlite3
+=======
+db.sqlite3
+>>>>>>> feature/product

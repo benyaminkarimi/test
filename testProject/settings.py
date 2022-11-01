@@ -24,10 +24,18 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
+<<<<<<< HEAD
+=======
+    'django_celery_beat',
+>>>>>>> feature/product
     'drf_yasg',
 ]
 PROJECT_APPS = [
     'account',
+<<<<<<< HEAD
+=======
+    'products',
+>>>>>>> feature/product
 ]
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -178,7 +186,31 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+<<<<<<< HEAD
 
+=======
+# Email Config
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rightel.test.mail@gmail.com'
+EMAIL_HOST_PASSWORD = 'qgbzsbmddwxzjvzi'
+
+# Celery Config
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379' 
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BROKER_URL = 'redis://localhost:6379'   
+# If time zones are active (USE_TZ = True) define your local
+CELERY_TIMEZONE = 'Asia/Tehran'
+# We're going to have our tasks rolling soon, so that will be handy
+CELERY_BEAT_SCHEDULE = {}
+>>>>>>> feature/product
 
 LOGGING = {
     "version": 1,
