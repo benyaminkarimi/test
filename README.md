@@ -21,6 +21,11 @@ Then install the dependencies:
 ```sh
 (env)$ pip install -r requirements.txt
 ```
+migrate:
+```sh
+(env)$ python manage.py makemigrations
+(env)$ python manage.py migrate
+```
 Then run redis server for celery:
 
 ```sh
