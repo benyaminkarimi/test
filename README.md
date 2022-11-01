@@ -26,7 +26,11 @@ Then run redis server for celery:
 ```sh
 (env)$ docker run -d -p 6379:6379 redis
 ```
+for celery worker:
 
+```sh
+(env)$ celery -A testProject worker --loglevel=info 
+```
 
 Once `pip` has finished downloading the dependencies:
 ```sh
